@@ -1,0 +1,20 @@
+CREATE TABLE departamentos (
+id SERIAL PRIMARY KEY,
+nombre VARCHAR (100) NOT NULL,
+ubicacion VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE empleados(
+id SERIAL PRIMARY KEY,
+departamento_id INTEGER REFERENCES departamentos(id),
+nombre VARCHAR(100) NOT NULL,
+salario  NUMERIC(10,2) CHECK (salario > 0),
+contratacion DATE NOT NULL
+);
+
+ALTER TABLE empleados ADD email VARCHAR(100) NOT NULL;
+ALTER TABLE empleados RENAME  TO trabajadores;
+ALTER TABLE trabajadores DROP CONSTRAINT empleados_departamento_id_fkey;
+DROP TABLE departamentos
+
+ALTER TABLE trabajadores ADD CONSTRAINT fk_departamento FOREIGN KEY(departamento_id) REFERENCES departamentos(id);

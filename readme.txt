@@ -1,0 +1,11 @@
+CUE: SENTENCIAS DDL A PARTIR DE MODELO FÍSICO 
+REBOUND EXERCISE: SENTENCIAS DDL
+
+ejercicio 
+m5s4
+
+para clonar:
+
+
+
+Thelma Delgado
